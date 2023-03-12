@@ -12,11 +12,11 @@ public interface DAO<T> {
 	
 	List<T> getAll() throws SQLException;
 	
-	int save(T e) throws SQLException;
+	int save(T t) throws SQLException;
 	
-	int insert(T e) throws SQLException;
+	int insert(T t) throws SQLException;
 	
-	int update (T e) throws SQLException;
+	int update (T t) throws SQLException;
 	
-	int delete(T e);
+	int delete(T t);
 }
