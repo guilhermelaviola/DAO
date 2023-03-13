@@ -71,8 +71,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public int update(Employee employee) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection conn = DBConnection.getConnection();
+		
+		String sql = "UPDATE employees SET employee_id = ?, first_name = ?, last_name = ?, dept_id = ? WHERE id = ?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setInt(1, employee.getEmpId());
+		ps.setString(2, employee.getFirstName());
+		ps.setString(3, employee.getLastName());
+		ps.setInt(4, employee.getDeptId());
+		ps.setInt(5, employee.getId());
+		
+		int result = ps.executeUpdate();
+		
+		ps.close();
+		conn.close();
+		
+		return result;
 	}
 
 	@Override

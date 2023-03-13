@@ -26,12 +26,19 @@ public class Main {
 		//System.out.println(employee);
 		
 		// Test 4: Testing if insert() works
+		//EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		
+		//Employee employee = new Employee(0, 14576, "Andrew", "Jones", 8);
+		
+		//int result = employeeDAO.insert(employee);
+		
+		//System.out.println(result);
+		
+		// Test 5: Testing if update() works
 		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		
-		Employee employee = new Employee(0, 14576, "Andrew", "Jones", 8);
+		Employee employee = new Employee(0, 23434, "Joshua", "Nelson", 3);
 		
-		int result = employeeDAO.insert(employee);
-		
-		System.out.println(result);
+		employeeDAO.update(employee);
 	}
 }
