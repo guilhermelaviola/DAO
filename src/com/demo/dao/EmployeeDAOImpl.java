@@ -50,8 +50,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public int insert(Employee employee) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection conn =  DBConnection.getConnection();
+		
+		String sql = "INSERT INTO employees (employee_id, first_name, last_name, dept_id) VALUES(?, ?, ?, ?)";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setInt(1, employee.getEmpId());
+		ps.setString(2, employee.getFirstName());
+		ps.setString(3, employee.getLastName());
+		ps.setInt(4, employee.getDeptId());
+		
+		int result = ps.executeUpdate();
+		
+		ps.close();
+		conn.close();
+		
+		return result;
 	}
 
 	@Override
