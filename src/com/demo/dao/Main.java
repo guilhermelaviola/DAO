@@ -28,17 +28,30 @@ public class Main {
 		// Test 4: Testing if insert() works
 		//EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		
-		//Employee employee = new Employee(0, 14576, "Andrew", "Jones", 8);
+		//Employee employee = new Employee(4, 14576, "Andrew", "Jones", 8);
 		
 		//int result = employeeDAO.insert(employee);
 		
 		//System.out.println(result);
 		
 		// Test 5: Testing if update() works
+		//EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		
+		//Employee employee = new Employee(5, 23434, "Joshua", "Nelson", 3);
+		
+		//employeeDAO.update(employee);
+		
+		// Test 6: Testing if delete() works
 		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		
-		Employee employee = new Employee(0, 23434, "Joshua", "Nelson", 3);
+		Employee employee = employeeDAO.get(6);
 		
-		employeeDAO.update(employee);
+		// Displaying the employee before deleting it
+		System.out.println(employee);
+		
+		int result = employeeDAO.delete(employee);
+		
+		System.out.println(result);
+		
 	}
 }

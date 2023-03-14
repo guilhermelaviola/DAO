@@ -48,6 +48,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return 0;
 	}
 
+	// CRUD: Inserting employee
 	@Override
 	public int insert(Employee employee) throws SQLException {
 		Connection conn =  DBConnection.getConnection();
@@ -69,6 +70,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return result;
 	}
 
+	// CRUD: Updating employee
 	@Override
 	public int update(Employee employee) throws SQLException {
 		Connection conn = DBConnection.getConnection();
@@ -91,12 +93,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return result;
 	}
 
+	// CRUD: Deleting employee
 	@Override
-	public int delete(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Employee employee) throws SQLException {
+		Connection conn = DBConnection.getConnection();
+		
+		String sql = "DELETE FROM employees WHERE id = ?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setInt(1, employee.getId());
+		
+		int result = ps.executeUpdate();
+		
+		ps.close();
+		conn.close();
+		
+		return result;
 	}
-
-	
 
 }
