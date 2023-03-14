@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 // Class to be instantiated when we want to
@@ -36,10 +38,32 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return employee;
 	}
 
+	// CRUD: Retrieving employees
 	@Override
 	public List<Employee> getAll() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = DBConnection.getConnection();
+		
+		String sql = "SELECT id, employee_id, first_name, last_name, dept_id FROM employees WHERE id = ?";
+		
+		List<Employee> employees = new ArrayList<>();
+		
+		Statement st = conn.createStatement();
+		
+		ResultSet rs = st.executeQuery(sql);
+		
+		while (rs.next()) {
+			int id = rs.getInt("id");
+			int employeeId = rs.getInt("employee_id");
+			String firstName = rs.getString("first_name");
+			String lastName = rs.getString("last_name");
+			int deptId = rs.getInt("dept_id");
+			
+			Employee employee = new Employee(id, employeeId, firstName, lastName, deptId);
+			
+			employees.add(employee);
+		}
+		
+		return employees;
 	}
 
 	@Override
