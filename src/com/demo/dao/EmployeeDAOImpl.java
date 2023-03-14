@@ -35,10 +35,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			
 			employee = new Employee(objectId, employeeId, firstName, lastName, deptId);
 		}
+		
 		return employee;
 	}
 
-	// CRUD: Retrieving employees
+	// CRUD: Retrieving employee
 	@Override
 	public List<Employee> getAll() throws SQLException {
 		Connection conn = DBConnection.getConnection();
