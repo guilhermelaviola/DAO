@@ -3,10 +3,11 @@ package com.demo.dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+// Test class
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
-		// Test 1
+		// Test 1: Testing is the application can store an object in-memory and display it
 		// Employee employee = new Employee(123, 1234, "Aaron", "Douglas", 21);
 		
 		// System.out.println(employee);
