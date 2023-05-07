@@ -12,4 +12,12 @@ This isolation supports the single responsibility principle. It separates the da
 - Makes it easier to write unit tests for the application;
 - Emphasizes the OOP principle of coding to an interface instead of an implementation.
 
-Source: Java Code Junkie (YouTube Channel). He is a really good instructor, who can explain complex topics with simple words and examples. He also has a lot of experience. The tutorial playlist: https://www.youtube.com/watch?v=3J5L40MJfU4&list=PL3bGLnkkGnuX_Pa95v_FUdazcFhEF7iBi&index=1
+## This example
+In this specific example, there are the following steps:
+1. Create a Data Transfer Object (DTO);
+2. Create DAO Interface;
+3. Create concrete DAO Implementation;
+4. Create Data Source;
+5. Create Test Program.
+
+<b>Source</b>: Java Code Junkie (YouTube Channel). He is a really good instructor, who can explain complex topics with simple words and examples. He also has a lot of experience. The tutorial playlist: https://www.youtube.com/watch?v=3J5L40MJfU4&list=PL3bGLnkkGnuX_Pa95v_FUdazcFhEF7iBi&index=1
